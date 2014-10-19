@@ -10,7 +10,7 @@ using namespace std;
 
 class Matrix
 {
-private:
+protected:
 
     int filas;
     int columnas;
@@ -24,6 +24,8 @@ public:
     Matrix(int filas, int columnas);
     ~Matrix();
     void setMatrix();
+    int getFilas();
+    int getColumnas();
     Matrix getMatrix();
     double** suma(Matrix a, Matrix b);
     void resta(Matrix a, Matrix b);

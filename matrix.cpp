@@ -21,7 +21,7 @@ Matrix::Matrix(int filas, int columnas)
 
     matriz = new double*[this->filas];
 
-    for(i = 0;i<this->columnas;i++)
+    for(i = 0;i<this->filas;i++)
     {
 
         matriz[i] = new double[this->columnas];
@@ -56,6 +56,17 @@ void Matrix::setMatrix()
     cout<<endl;
 }
 
+int Matrix::getFilas()
+{
+    return this->filas;
+}
+
+int Matrix::getColumnas()
+{
+    return this->columnas;
+}
+
+
 
 Matrix Matrix::getMatrix()
 {
@@ -73,7 +84,7 @@ Matrix Matrix::getMatrix()
 
   z.matriz = new double* [filas];
 
-  for(i=0;i<columnas;i++)
+  for(i=0;i<filas;i++)
   {
       z.matriz[i] = new double [columnas];
   }
@@ -153,7 +164,7 @@ void Matrix::transpuesta()
     {
         z = new double*[this->filas];
 
-        for(i = 0;i<this->columnas;i++)
+        for(i = 0;i<this->filas;i++)
         {
 
             z[i] = new double[this->columnas];

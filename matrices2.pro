@@ -11,3 +11,8 @@ HEADERS += \
     matrix.h \
     pgm.h
 
+LIBS += -lfreeglut -lopengl32 -lglu32
+
+
+
+
