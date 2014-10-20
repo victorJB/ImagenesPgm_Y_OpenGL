@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 {
 
 
-   b.CargarDatos("C://venecia.pgm");
+   b.CargarDatos("C://venecia1.pgm");
    glutInit(&argc, argv);
    glutInitWindowSize(640,480);
    glutInitWindowPosition(200,100);

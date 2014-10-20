@@ -69,3 +69,5 @@ int PGM::devolverCoordenada(int i, int j)
 {
     return this->matriz[i][j];
 }
+
+
