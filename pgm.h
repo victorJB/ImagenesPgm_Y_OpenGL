@@ -1,7 +1,7 @@
 #ifndef PGM_H
 #define PGM_H
 
-#include <matrix.h>
+#include "matrix.h"
 #include <iostream>
 #include <fstream>
 

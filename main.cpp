@@ -1,16 +1,16 @@
 #ifdef __APPLE__
 #  include <iostream>
-#  include <matrix.h>
+#  include "matrix.h"
 #  include <fstream>
-#  include <pgm.h>
+#  include "pgm.h"
 #  include <OpenGL/gl.h>
 #  include <OpenGL/glu.h>
 #  include <GLUT/glut.h>
 #else
 #include <iostream>
-#include <matrix.h>
+#include "matrix.h"
 #include <fstream>
-#include <pgm.h>
+#include "pgm.h"
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 {
 
 
-   b.CargarDatos("C://venecia1.pgm");
+   b.CargarDatos("C://venecia.pgm");
    glutInit(&argc, argv);
    glutInitWindowSize(640,480);
    glutInitWindowPosition(200,100);
@@ -53,7 +53,7 @@ void display()
     int i = 0;
     int j = 0;
     double data = 0;
-    int escalar = 150;
+    int escalar = 200;
 
     glClear(GL_COLOR_BUFFER_BIT);
 

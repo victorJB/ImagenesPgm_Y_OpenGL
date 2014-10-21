@@ -39,6 +39,9 @@ public:
     friend ostream& operator << (ostream& os, const Matrix &m);
     void cargarDatos(string A);
     void exportarDatos(string A);
+    static Matrix sum(Matrix a, Matrix b);
+    static Matrix rest(Matrix a, Matrix b);
+    static Matrix mult(Matrix a, Matrix b);
 
 
 };

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <matrix.h>
+#include "matrix.h"
 #include <fstream>
 
 using namespace std;
@@ -416,4 +416,19 @@ void Matrix::exportarDatos(string A)
 
     }
 
+}
+
+Matrix Matrix::sum(Matrix a, Matrix b)
+{
+    return a+b;
+}
+
+Matrix Matrix::rest(Matrix a, Matrix b)
+{
+    return a-b;
+}
+
+Matrix Matrix::mult(Matrix a, Matrix b)
+{
+    return a*b;
 }
