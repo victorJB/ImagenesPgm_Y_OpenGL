@@ -10,7 +10,9 @@ using namespace std;
 class PGM : public Matrix
 {
 
-private:
+protected:
+
+
 
 
 
@@ -20,6 +22,7 @@ public:
     PGM(int filas, int columnas);
     void CargarDatos(string nombre);
     int devolverCoordenada(int i, int j);
+    void exportarDatos(string A);
 
 
 };

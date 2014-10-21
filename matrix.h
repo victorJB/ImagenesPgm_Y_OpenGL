@@ -15,6 +15,7 @@ protected:
     int filas;
     int columnas;
     double **matriz;
+    char cadena[200];
 
 
 public:

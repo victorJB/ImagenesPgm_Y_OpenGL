@@ -23,9 +23,9 @@ void keyboard(unsigned char z, int x, int y);
 
 using namespace std;
 
-Matrix a;
 opImage b;
 opImage c;
+opImage actual;
 char selector;
 int k = 0;
 char g;
@@ -36,8 +36,9 @@ int main(int argc, char** argv)
 {
 
 
-   b.CargarDatos("C://venecia.pgm");
+   b.CargarDatos("venecia.pgm");
    c.igualar(b);
+   actual.igualar(b);
 
    glutInit(&argc, argv);
    glutInitWindowSize(640,480);
@@ -69,12 +70,22 @@ void keyboard(unsigned char z,int x,int y)
       case 'd':
 
         b.pintar();
+        actual.igualar(b);
         break;
+
       case 'a':
         c.threshold(b,numero);
+        actual.igualar(c);
             break;
-       case 's':
+
+      case 's':
         c.negativo(b);
+        actual.igualar(c);
+        break;
+
+      case 'f':
+        actual.exportarDatos("venecia5.pgm");
+        break;
 
     }
 
