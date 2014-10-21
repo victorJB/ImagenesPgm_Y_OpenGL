@@ -29,6 +29,7 @@ opImage c;
 char selector;
 int k = 0;
 char g;
+int numero = 155;
 
 
 int main(int argc, char** argv)
@@ -70,13 +71,10 @@ void keyboard(unsigned char z,int x,int y)
         b.pintar();
         break;
       case 'a':
-        c.threshold(b);
-        break;
-      case 's':
-        c.negativo(b);
-        break;
-
+        c.threshold(b,numero);
             break;
+       case 's':
+        c.negativo(b);
 
     }
 

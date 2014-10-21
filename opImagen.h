@@ -13,9 +13,11 @@ class opImage : public PGM
  public:
 
     void pintar();
-    void threshold(opImage a);
+    void threshold(opImage a, int numero);
     void igualar(opImage a);
     void negativo(opImage a);
+    opImage operator>(int t);
+   opImage operator!();
 
 
 

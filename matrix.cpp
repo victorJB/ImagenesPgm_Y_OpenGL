@@ -29,7 +29,7 @@ Matrix::Matrix(int filas, int columnas)
 
 }
 
-Matrix::~Matrix()
+/*Matrix::~Matrix()
 {
 
     delete &filas;
@@ -37,7 +37,7 @@ Matrix::~Matrix()
 
 
 }
-
+*/
 
 void Matrix::setMatrix()
 {

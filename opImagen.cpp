@@ -75,23 +75,10 @@ void opImage::pintar()
 
 }
 
-void opImage::threshold(opImage a)
+void opImage::threshold(opImage a, int numero)
 {
-    int i = 0;
-    int j = 0;
 
-    this->igualar(a);
-
-    for(i=0;i<this->filas;i++)
-    {
-        for(j=0;j<this->columnas;j++)
-        {
-            if(this->matriz[i][j]>=150)
-                this->matriz[i][j] = 255;
-            else
-                this->matriz[i][j] = 0;
-        }
-    }
+    *this = a>numero;
 
     this->pintar();
 
@@ -100,17 +87,76 @@ void opImage::threshold(opImage a)
 
 void opImage::negativo(opImage a)
 {
-    this->igualar(a);
-    int i = 0;
-    int j = 0;
 
-    for(i=0;i<this->filas;i++)
-    {
-        for(j=0;j<this->columnas;j++)
-        {
-            this->matriz[i][j] = 255-this->matriz[i][j];
-        }
-    }
+    *this = !a;
 
     this->pintar();
 }
+
+opImage opImage::operator>(int t)
+{
+
+    int i = 0;
+    int j = 0;
+
+    opImage z;
+
+    z.filas = this->filas;
+    z.columnas = this->columnas;
+
+    z.matriz = new double* [z.filas];
+
+    for(i=0;i<filas;i++)
+    {
+        z.matriz[i] = new double [z.columnas];
+    }
+
+    for(i=0;i<z.filas;i++)
+    {
+        for(j=0;j<z.columnas;j++)
+        {
+            if(this->matriz[i][j]>=t)
+                z.matriz[i][j] = 255;
+            else
+                z.matriz[i][j] = 0;
+        }
+    }
+
+    return z;
+}
+
+opImage opImage::operator!()
+{
+
+    int i = 0;
+    int j = 0;
+
+    opImage z;
+
+    z.filas = this->filas;
+    z.columnas = this->columnas;
+
+    z.matriz = new double* [z.filas];
+
+    for(i=0;i<z.filas;i++)
+    {
+        z.matriz[i] = new double [z.columnas];
+    }
+
+    for(i=0;i<z.filas;i++)
+    {
+        for(j=0;j<z.columnas;j++)
+        {
+          z.matriz[i][j] = 255-this->matriz[i][j];
+
+        }
+    }
+
+    return z;
+}
+
+
+
+
+
+

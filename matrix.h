@@ -22,7 +22,7 @@ public:
 
     Matrix();
     Matrix(int filas, int columnas);
-    ~Matrix();
+    //~Matrix();
     void setMatrix();
     int getFilas();
     int getColumnas();
@@ -42,7 +42,6 @@ public:
     static Matrix sum(Matrix a, Matrix b);
     static Matrix rest(Matrix a, Matrix b);
     static Matrix mult(Matrix a, Matrix b);
-
 
 };
 
