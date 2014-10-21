@@ -3,6 +3,7 @@
 #  include "matrix.h"
 #  include <fstream>
 #  include "pgm.h"
+#  include "opImagen.h"
 #  include <OpenGL/gl.h>
 #  include <OpenGL/glu.h>
 #  include <GLUT/glut.h>
@@ -11,23 +12,32 @@
 #include "matrix.h"
 #include <fstream>
 #include "pgm.h"
+#include "opImagen.h"
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
 #endif
 
 void display(void);
+void keyboard(unsigned char z, int x, int y);
 
 using namespace std;
 
 Matrix a;
-PGM b;
+opImage b;
+opImage c;
+char selector;
+int k = 0;
+char g;
+
 
 int main(int argc, char** argv)
 {
 
 
    b.CargarDatos("C://venecia.pgm");
+   c.igualar(b);
+
    glutInit(&argc, argv);
    glutInitWindowSize(640,480);
    glutInitWindowPosition(200,100);
@@ -36,6 +46,7 @@ int main(int argc, char** argv)
    glutCreateWindow("Venecia");
    gluOrtho2D(0,640,0,480);
    glutDisplayFunc(display);
+   glutKeyboardFunc(keyboard);
    glutMainLoop();
 
 
@@ -46,42 +57,28 @@ int main(int argc, char** argv)
 
 void display()
 {
-    int filas =b.getFilas();
-    int columnas =b.getColumnas();
-    double n = 0;
-    double r = 480;
-    int i = 0;
-    int j = 0;
-    double data = 0;
-    int escalar = 200;
+  b.pintar();
 
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    glColor3f(1.0f, 0.0f, 0.0f);
-
-    glBegin(GL_POINTS);
-
-    for(i=0;i<filas;i++)
-    {
-        for(j=0;j<columnas;j++)
-        {
-            data = b.devolverCoordenada(i,j);
-            data = data/escalar;
-            glColor3f(data,data,data);
-
-            glVertex2f(n,r);
-            n = n+1;
-
-        }
-        j = 0;
-        n = 0;
-        r = r-1;
-    }
-
-
-    glEnd();
-
-    glFlush();
 }
 
+void keyboard(unsigned char z,int x,int y)
+{
+    switch(z)
+    {
+      case 'd':
+
+        b.pintar();
+        break;
+      case 'a':
+        c.threshold(b);
+        break;
+      case 's':
+        c.negativo(b);
+        break;
+
+            break;
+
+    }
+
+}
 

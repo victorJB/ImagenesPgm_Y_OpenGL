@@ -364,11 +364,11 @@ void Matrix::cargarDatos(string A)
         file >> this->filas;
               file >> this->columnas;
 
-              this->matriz = new double* [filas];
+              this->matriz = new double* [this->filas];
 
               for(i=0;i<this->filas;i++)
               {
-                  this->matriz[i]= new double [columnas];
+                  this->matriz[i]= new double [this->columnas];
               }
 
               for(i = 0;i<this->filas;i++)

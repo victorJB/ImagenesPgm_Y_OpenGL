@@ -15,6 +15,7 @@ private:
 
 
 public:
+
     PGM();
     PGM(int filas, int columnas);
     void CargarDatos(string nombre);
