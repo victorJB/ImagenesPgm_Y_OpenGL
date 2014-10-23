@@ -14,9 +14,16 @@ void opImage::igualar(opImage a)
 {
     int i = 0;
     int j = 0;
+    int  x = 0;
 
     this->filas = a.filas;
     this->columnas = a.columnas;
+
+    while(a.cadena[x] != '\0')
+    {
+        this->cadena[x] = a.cadena[x];
+        x++;
+    }
 
     this->matriz = new double* [this->filas];
 
@@ -80,6 +87,14 @@ void opImage::threshold(opImage a, int numero)
 
     *this = a>numero;
 
+     int  x = 0;
+
+     while(a.cadena[x] != '\0')
+     {
+         this->cadena[x] = a.cadena[x];
+         x++;
+     }
+
     this->pintar();
 
 
@@ -89,6 +104,15 @@ void opImage::negativo(opImage a)
 {
 
     *this = !a;
+
+    int  x = 0;
+
+    while(a.cadena[x] != '\0')
+    {
+        this->cadena[x] = a.cadena[x];
+        x++;
+    }
+
 
     this->pintar();
 }

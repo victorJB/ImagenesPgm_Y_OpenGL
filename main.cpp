@@ -36,7 +36,7 @@ int main(int argc, char** argv)
 {
 
 
-   b.CargarDatos("venecia.pgm");
+   b.CargarDatos("venecia5.pgm");
    c.igualar(b);
    actual.igualar(b);
 
