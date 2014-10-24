@@ -1,9 +1,11 @@
-Imagenes PGM t OpenGL
+Imagenes PGM y uso de OpenGL
 ====================
 
 Uso de herencia, Opengl  e Imagenes PGM en el Lenguaje C++
 
 Autor: Victor Omar Jiménez Barajas
+
+Universidad de Guanajuato
 
 Email: slayerhd363@gmail.com
 
