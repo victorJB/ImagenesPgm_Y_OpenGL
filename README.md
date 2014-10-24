@@ -11,7 +11,7 @@ Email: slayerhd363@gmail.com
 
 El proyecto incluye:
 
-- Progrmación en C++ , manejo de clases y uso de herencia.
+- Programación en C++ , manejo de clases y uso de herencia.
 - Uso de punteros dobles.
 - Constructores,Desctructores.
 - Manejo de imagenes PGM
