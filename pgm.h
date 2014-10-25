@@ -12,13 +12,14 @@ class PGM : public Matrix
 
 protected:
 
-
+ char cadena[200];
 
 
 
 public:
 
     PGM();
+    ~PGM();
     PGM(int filas, int columnas);
     void CargarDatos(string nombre);
     int devolverCoordenada(int i, int j);

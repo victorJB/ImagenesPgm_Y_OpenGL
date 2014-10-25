@@ -10,7 +10,17 @@
 #include <GL/glut.h>
 #endif
 
-void opImage::igualar(opImage a)
+opImage::opImage()
+{
+
+}
+
+opImage::~opImage()
+{
+
+}
+
+void opImage::igualar(const opImage &a)
 {
     int i = 0;
     int j = 0;
@@ -39,6 +49,33 @@ void opImage::igualar(opImage a)
             this->matriz[i][j]=a.matriz[i][j];
         }
     }
+
+
+}
+
+void opImage::igualarDatos(const opImage &a)
+{
+    int i = 0;
+    int j = 0;
+    int  x = 0;
+
+    this->filas = a.filas;
+    this->columnas = a.columnas;
+
+    while(a.cadena[x] != '\0')
+    {
+        this->cadena[x] = a.cadena[x];
+        x++;
+    }
+
+    for(i=0;i<this->filas;i++)
+    {
+        for(j=0;j<this->columnas;j++)
+        {
+            this->matriz[i][j]=a.matriz[i][j];
+        }
+    }
+
 
 
 }
@@ -82,10 +119,12 @@ void opImage::pintar()
 
 }
 
-void opImage::threshold(opImage a, int numero)
+void opImage::threshold(const opImage &a, int numero)
 {
 
-    *this = a>numero;
+    this->igualarDatos(a);
+
+    *this>numero;
 
      int  x = 0;
 
@@ -100,10 +139,11 @@ void opImage::threshold(opImage a, int numero)
 
 }
 
-void opImage::negativo(opImage a)
+void opImage::negativo(const opImage &a)
 {
+    this->igualarDatos(a);
 
-    *this = !a;
+    !*this;
 
     int  x = 0;
 
@@ -117,66 +157,40 @@ void opImage::negativo(opImage a)
     this->pintar();
 }
 
-opImage opImage::operator>(int t)
+void opImage::operator>(int t)
 {
 
     int i = 0;
     int j = 0;
 
-    opImage z;
-
-    z.filas = this->filas;
-    z.columnas = this->columnas;
-
-    z.matriz = new double* [z.filas];
-
-    for(i=0;i<filas;i++)
+    for(i=0;i<this->filas;i++)
     {
-        z.matriz[i] = new double [z.columnas];
-    }
-
-    for(i=0;i<z.filas;i++)
-    {
-        for(j=0;j<z.columnas;j++)
+        for(j=0;j<this->columnas;j++)
         {
-            if(this->matriz[i][j]>=t)
-                z.matriz[i][j] = 255;
+            if(matriz[i][j]>=t)
+                this->matriz[i][j] = 255;
             else
-                z.matriz[i][j] = 0;
+                this->matriz[i][j] = 0;
         }
     }
 
-    return z;
 }
 
-opImage opImage::operator!()
+void opImage::operator!()
 {
 
     int i = 0;
     int j = 0;
 
-    opImage z;
-
-    z.filas = this->filas;
-    z.columnas = this->columnas;
-
-    z.matriz = new double* [z.filas];
-
-    for(i=0;i<z.filas;i++)
+    for(i=0;i<this->filas;i++)
     {
-        z.matriz[i] = new double [z.columnas];
-    }
-
-    for(i=0;i<z.filas;i++)
-    {
-        for(j=0;j<z.columnas;j++)
+        for(j=0;j<this->columnas;j++)
         {
-          z.matriz[i][j] = 255-this->matriz[i][j];
+          this->matriz[i][j] = 255-this->matriz[i][j];
 
         }
     }
 
-    return z;
 }
 
 

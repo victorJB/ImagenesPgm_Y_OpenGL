@@ -5,6 +5,11 @@ PGM::PGM()
 
 }
 
+PGM::~PGM()
+{
+
+}
+
 PGM::PGM(int filas, int columnas)
 {
 

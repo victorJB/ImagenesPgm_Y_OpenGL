@@ -29,15 +29,20 @@ Matrix::Matrix(int filas, int columnas)
 
 }
 
-/*Matrix::~Matrix()
+ Matrix::~Matrix()
 {
+  int i = 0;
 
-    delete &filas;
-    delete &columnas;
+  for(i=0;i<filas;i++)
+  {
+      delete matriz[i];
+  }
+
+  delete matriz;
 
 
 }
-*/
+
 
 void Matrix::setMatrix()
 {
@@ -418,7 +423,7 @@ void Matrix::exportarDatos(string A)
 
 }
 
-Matrix Matrix::sum(Matrix a, Matrix b)
+/*Matrix Matrix::sum(Matrix a, Matrix b)
 {
     return a+b;
 }
@@ -432,3 +437,4 @@ Matrix Matrix::mult(Matrix a, Matrix b)
 {
     return a*b;
 }
+*/

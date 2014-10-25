@@ -44,9 +44,8 @@ int main(int argc, char** argv)
    glutInitWindowSize(640,480);
    glutInitWindowPosition(200,100);
    glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
-   gluOrtho2D(0,640,0,480);
    glutCreateWindow("Venecia");
-   gluOrtho2D(0,640,0,480);
+   glOrtho(0,640,0,480,0,480);
    glutDisplayFunc(display);
    glutKeyboardFunc(keyboard);
    glutMainLoop();
@@ -59,7 +58,7 @@ int main(int argc, char** argv)
 
 void display()
 {
-  b.pintar();
+ b.pintar();
 
 }
 
@@ -70,17 +69,17 @@ void keyboard(unsigned char z,int x,int y)
       case 'd':
 
         b.pintar();
-        actual.igualar(b);
+        actual.igualarDatos(b);
         break;
 
       case 'a':
         c.threshold(b,numero);
-        actual.igualar(c);
+        actual.igualarDatos(c);
             break;
 
       case 's':
         c.negativo(b);
-        actual.igualar(c);
+        actual.igualarDatos(c);
         break;
 
       case 'f':

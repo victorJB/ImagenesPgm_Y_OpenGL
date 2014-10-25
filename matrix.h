@@ -15,7 +15,7 @@ protected:
     int filas;
     int columnas;
     double **matriz;
-    char cadena[200];
+
 
 
 public:
@@ -23,7 +23,7 @@ public:
 
     Matrix();
     Matrix(int filas, int columnas);
-    //~Matrix();
+    ~Matrix();
     void setMatrix();
     int getFilas();
     int getColumnas();
@@ -40,9 +40,9 @@ public:
     friend ostream& operator << (ostream& os, const Matrix &m);
     void cargarDatos(string A);
     void exportarDatos(string A);
-    static Matrix sum(Matrix a, Matrix b);
-    static Matrix rest(Matrix a, Matrix b);
-    static Matrix mult(Matrix a, Matrix b);
+    //static Matrix sum(Matrix a, Matrix b);
+    //static Matrix rest(Matrix a, Matrix b);
+    //static Matrix mult(Matrix a, Matrix b);
 
 };
 
