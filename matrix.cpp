@@ -423,7 +423,7 @@ void Matrix::exportarDatos(string A)
 
 }
 
-/*Matrix Matrix::sum(Matrix a, Matrix b)
+Matrix Matrix::sum(Matrix a, Matrix b)
 {
     return a+b;
 }
@@ -437,4 +437,4 @@ Matrix Matrix::mult(Matrix a, Matrix b)
 {
     return a*b;
 }
-*/
+
