@@ -14,6 +14,7 @@ HEADERS += \
     opImagen.h
 
 LIBS += -lfreeglut -lopengl32 -lglu32
+#LIBS += -lm -lGL -lglut -lGLU
 
 
 
