@@ -13,7 +13,7 @@ El proyecto incluye:
 
 - Programación en C++ , manejo de clases y uso de herencia.
 - Uso de punteros dobles.
-- Constructores,Desctructores.
+- Constructor,Desctructor.
 - Manejo de imagenes PGM
 - Filtro Threshold para la imagen PGM
 - Filtro Negativo para PGM
